@@ -12,6 +12,11 @@ export const resolvers = {
             const note = new Note({title, content, dateCreated})
             await note.save()
             return note
+        },
+        addReminder: async ( _, {title, content, reminderTime } ) => {
+            const reminder = new Reminder({title, content, reminderTime})
+            await reminder.save()
+            return reminder
         }
     }
 }
